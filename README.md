@@ -2,6 +2,9 @@
 ## Dockerfile
 Запуск python в контейнере бывает полезно, когда мы хотим обучить несколько моделей параллельно, когда хотим ограничить наш скрипт или сделать его быстро перемещаемым и масштабируемым.
 Здесь обернем проект My Project написанный на python в Docker контейнер с выводом логов на локальную машину (вместо логов может быть файлы БД, обученная модель или другие файлы которые вы хотите достать из контейнера). 
+
+Предположу, что Docker у вас стоит(если нет, то вот [дока](https://docs.docker.com/engine/install/)).
+
 Начнем с создания [Dockerfile](Dockerfile) ([Описание всех команд поддерживаемых Dockerfile](https://docs.docker.com/engine/reference/builder/)):
 ```
 FROM python:3.10
@@ -58,7 +61,7 @@ docker run --rm -d -v ~/my_project/log:/my_project/log --name my_script my-proje
 ```
 
 ## Сахарок
-Добавим полученные комманды в виде alias'ов для быстрого доступа([add_command](add_command)):
+Добавим полученные комманды в виде [alias'ов](https://losst.pro/poleznye-alias-linux) для быстрого доступа([add_command](add_command)):
 ```bash
 source ./add_command
 ```
