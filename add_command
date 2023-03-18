@@ -1,2 +1,2 @@
 alias build='docker build --pull --rm -f "Dockerfile" -t my-project "."'
-alias start='docker run --rm -d -v ~/PycharmProjects/Docker/my_project/log:/log --name my_script my-project:latest'
+alias start='docker run --rm -d -v ~/my_project/log:/my_project/log --name my_script my-project:latest'
