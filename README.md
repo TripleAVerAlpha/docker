@@ -42,10 +42,10 @@ docker run --rm -d my-project:latest
 ``` 
 
 При запуске видим, что локально ни чего не изменилось, а значит, все, что сделал контейнер умерло вместе с ним.
-Вмонтируем папку с локальными логами в контейнер, чтобы достать их из контенера.
+Вмонтируем папку с локальными логами и файлами в контейнер, чтобы достать их из контенера.
 
 ```bash
--v ~/my_project/log:/my_project/log
+-v ~/my_project/log:/my_project/log -v ~/my_project/data:/my_project/data
 ```
 
 А так же зададим имя, чтобы не потерять запущенный контейнер и не запустить его дважды:
@@ -54,10 +54,15 @@ docker run --rm -d my-project:latest
 --name my_script
 ```
 
+И пробросим порты для Flask
+```bash
+-p 5000:5000
+```
+
 Получили строку запуска:
 
 ``` bash
-docker run --rm -d -v ~/my_project/log:/my_project/log --name my_script my-project:latest
+docker run --rm -d -v -p 5000:5000 ~/my_project/log:/my_project/log -v ~/my_project/data:/my_project/data --name my_script my-project:latest
 ```
 
 ## Сахарок
