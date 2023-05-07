@@ -62,7 +62,7 @@ docker run --rm -d my-project:latest
 Получили строку запуска:
 
 ``` bash
-docker run --rm -d -v -p 5000:5000 ~/my_project/log:/my_project/log -v ~/my_project/data:/my_project/data --name my_script my-project:latest
+docker run --rm -d -p 5000:5000 -v ~/my_project/log:/my_project/log -v ~/my_project/data:/my_project/data --name my_script my-project:latest
 ```
 
 ## Сахарок
